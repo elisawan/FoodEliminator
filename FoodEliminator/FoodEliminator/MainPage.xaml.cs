@@ -21,16 +21,12 @@ namespace FoodEliminator
 
         void Button_Clicked(object sender, System.EventArgs e)
         {
-            Ingredient ingredient = new Ingredient()
-            {
-                Name = ingredientEntry.Text
-            };
+            Food elementalFood = new ElementalFood(ingredientEntry.Text);
 
             using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
             {
-                conn.CreateTable<Ingredient>();
-                int rowsAdded = conn.Insert(ingredient);
-
+                conn.CreateTable<ElementalFood>();
+                int rowsAdded = conn.Insert(elementalFood);
             }
         }
     }
