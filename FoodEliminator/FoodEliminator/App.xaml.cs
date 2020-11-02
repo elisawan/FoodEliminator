@@ -9,20 +9,22 @@ namespace FoodEliminator
         public static string FilePath;
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new MainPage();
+            InitializeApp();
         }
 
         public App(string filePath)
         {
-            InitializeComponent();
-
-            MainPage = new MainPage();
+            InitializeApp();
 
             FilePath = filePath;
         }
-        
+
+        public void InitializeApp()
+        {
+            InitializeComponent();
+
+            MainPage = new MainPage();
+        }
         protected override void OnStart()
         {
         }
